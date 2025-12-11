@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTV SEO - Dịch vụ SEO & AI Tiên Phong</title>
+    <meta name="description" content="Dịch vụ SEO tổng thể kết hợp AI giúp doanh nghiệp tăng trưởng Traffic và Doanh thu bền vững.">
+    
+    <!-- Google Fonts: Be Vietnam Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#6F2CC4',
+                            blue: '#0BC5FC',
+                            accent: '#EF004B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #6F2CC4, #0BC5FC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #6F2CC4, #0BC5FC);
+        }
+        .step-connector::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background-color: #E2E8F0;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        @media (max-width: 768px) {
+            .step-connector::after {
+                top: 100%;
+                left: 50%;
+                width: 2px;
+                height: 40px;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 bg-white antialiased selection:bg-[#6F2CC4] selection:text-white">
+
+    <!-- Section: Header - Start -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl shadow-md">G</div>
+                <span class="text-2xl font-bold text-slate-800 tracking-tight">GTV<span class="text-[#6F2CC4]">SEO</span></span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#giai-phap" class="hover:text-[#6F2CC4] transition-colors">Giải pháp</a>
+                <a href="#quy-trinh" class="hover:text-[#6F2CC4] transition-colors">Quy trình</a>
+                <a href="#gia-tri" class="hover:text-[#6F2CC4] transition-colors">Giá trị</a>
+                <a href="#van-hoa" class="hover:text-[#6F2CC4] transition-colors">Văn hóa</a>
+                <a href="#du-an" class="hover:text-[#6F2CC4] transition-colors">Dự án</a>
+            </nav>
+            <a href="#tu-van" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 border border-[#6F2CC4] text-[#6F2CC4] rounded-lg font-semibold hover:bg-[#6F2CC4] hover:text-white transition-all duration-300">
+                Tư vấn miễn phí
+            </a>
+            <button class="md:hidden p-2 text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <!-- Section: Header - End -->
+
+    <main class="pt-20"> 
+        <!-- Section: Hero Banner - Start -->
+        <section class="relative py-16 md:py-24 lg:py-32 overflow-hidden bg-slate-50">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-bl from-blue-50 to-transparent opacity-50"></div>
+            <div class="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-tr from-purple-50 to-transparent opacity-50"></div>
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-purple-50 text-[#6F2CC4] text-sm font-bold tracking-wide mb-6 border border-purple-100">
+                            TIÊN PHONG CÔNG NGHỆ SEO & AI
+                        </span>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.2] mb-6">
+                            Đột phá thứ hạng với <br>
+                            <span class="gradient-text">Chiến lược SEO AI</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                            Chúng tôi giúp doanh nghiệp thống lĩnh từ khóa, tăng trưởng traffic bền vững nhờ sức mạnh của trí tuệ nhân tạo kết hợp với kinh nghiệm thực chiến chuyên sâu.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#tu-van" class="group inline-flex items-center justify-center px-8 py-3.5 rounded-lg gradient-bg text-white font-bold shadow-lg shadow-purple-500/30 hover:brightness-110 hover:-translate-y-1 transition-all duration-300">
+                                <span>Nhận kế hoạch SEO</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </a>
+                            <a href="#case-study" class="inline-flex items-center justify-center px-8 py-3.5 rounded-lg border border-[#6F2CC4] text-[#6F2CC4] font-bold hover:bg-[#6F2CC4] hover:text-white transition-all duration-300">
+                                Xem Case Study
+                            </a>
+                        </div>
+                        <div class="mt-10 pt-8 border-t border-slate-200 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-slate-500 font-medium">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-[#EF004B]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                <span>Top 1 Agency SEO</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-[#EF004B]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                <span>500+ Dự án thành công</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 relative">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-slate-100 p-2">
+                            <div class="bg-slate-50 rounded-xl p-6 min-h-[400px] flex items-center justify-center border border-dashed border-slate-300">
+                                <div class="text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-[#6F2CC4] mx-auto mb-4 opacity-30">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                    </svg>
+                                    <p class="text-slate-400 font-medium">Biểu đồ tăng trưởng Traffic & Từ khóa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Hero Banner - End -->
+
+        <!-- Section: Core Values (Giá trị cốt lõi) - Start -->
+        <section id="gia-tri" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 uppercase tracking-tight">
+                        Giá Trị <span class="gradient-text">Cốt Lõi</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        GTV SEO hoạt động và phát triển dựa trên năm giá trị cốt lõi, định hướng mọi hành động và quyết định trong hành trình phát triển bền vững.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.499 5.221 69.17 69.17 0 00-2.658.813m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">1. Trở thành Bậc thầy</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                GTV không ngừng cải tiến và đổi mới trong từng công việc. Chúng tôi phát triển kiến thức chuyên môn và kỹ năng mỗi ngày để đạt được thành tích xuất sắc nhất cho khách hàng.
+                            </p>
+                        </div>
+                        <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">2. Tư duy Cầu tiến</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                GTV hướng đến giá trị dài hạn thay vì kết quả ngắn hạn. Mỗi ngày trôi qua, chúng tôi nỗ lực phát triển giải pháp bền vững và hiệu quả cho cả khách hàng lẫn đội ngũ nội bộ.
+                            </p>
+                        </div>
+                        <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <!-- Icon: Scale (Balance/Integrity) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">3. Chính trực và Minh bạch</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Suy nghĩ, hành động và lời nói nhất quán là nền tảng của sự chính trực. Chúng tôi minh bạch trong từng chính sách để tạo giá trị thực cho khách hàng cũng như thành viên đồng hành.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
+                         <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575V12a6.75 6.75 0 006.75 6.75h.75c2.31 0 4.437-.96 5.958-2.522m-6-10.222a2.416 2.416 0 01-.881-.488 2.416 2.416 0 01-.643-1.636 2.416 2.416 0 01.984-1.894" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">4. Tự chủ và Trách nhiệm</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Mỗi thành viên GTV được tự chủ trong công việc và tài nguyên. Đồng thời, mỗi GTV-er luôn có tinh thần trách nhiệm cao với công việc của mình mà không đổ lỗi hay than vãn.
+                            </p>
+                        </div>
+                         <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">5. Toàn tâm toàn sức</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                GTV làm việc bằng cả trái tim, khối óc và tâm hồn. Từ việc tạo ra kết quả xuất sắc cho khách hàng đến tham gia các hoạt động cộng đồng, mỗi GTV-er đều hết mình cống hiến.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Core Values - End -->
+
+        <!-- Section: Corporate Culture (Văn hóa doanh nghiệp) - Start -->
+        <section id="van-hoa" class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <!-- Heading -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 uppercase tracking-tight">
+                        Văn Hóa <span class="gradient-text">Doanh Nghiệp</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Văn hóa GTV là kim chỉ nam để đưa công ty phát triển thành công như hiện tại. Dưới đây là 5 văn hóa cốt lõi của chúng tôi.
+                    </p>
+                </div>
+
+                <!-- Grid Layout: 3 Top / 2 Bottom -->
+                <div class="flex flex-col gap-8">
+                    
+                    <!-- Row 1: 3 Items -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Culture 1 -->
+                        <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <!-- Icon: User Group (Customer Focus) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">1. Khách hàng là trọng tâm</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Với tư duy cùng thắng, GTV luôn đặt trọn tâm huyết vì lợi ích tốt nhất cho mỗi khách hàng, bao gồm cả khách hàng bên ngoài và đội ngũ nội bộ.
+                            </p>
+                        </div>
+
+                        <!-- Culture 2 -->
+                        <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <!-- Icon: Chat Bubble Left Right (Listen/Speak) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">2. Khiêm tốn – Lắng nghe</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Giữ tư duy mở để hoàn thiện bản thân. Chúng tôi chia sẻ thẳng thắn, tôn trọng quan điểm cá nhân và chân thành lắng nghe để tìm giải pháp tối ưu.
+                            </p>
+                        </div>
+
+                        <!-- Culture 3 -->
+                        <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <!-- Icon: Trophy (Challenge) - REPLACED -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a45.42 45.42 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">3. Thử thách bản thân</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Liên tục học hỏi và khiêu chiến thử thách mới. Chúng tôi tâm niệm: "Hãy làm những điều chưa từng làm để đạt được những điều chưa từng có."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: 2 Items (Centered) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
+                         <!-- Culture 4 -->
+                         <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <!-- Icon: Clipboard Check (Responsibility/Accountability) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H15.75m-7.5 5.25l1.125 1.125 3.375-3.375" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">4. Chịu trách nhiệm 100%</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Ngưng đổ lỗi, chịu trách nhiệm với quyết định của bản thân và tập thể. Chúng tôi nhìn nhận khách quan để giải quyết vấn đề một cách hoàn hảo nhất.
+                            </p>
+                        </div>
+
+                         <!-- Culture 5 -->
+                         <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-purple-100 hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-[#6F2CC4] transition-colors duration-300">
+                                <!-- Icon: Shield Check (Integrity) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#6F2CC4] group-hover:text-white transition-colors duration-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-[#6F2CC4] transition-colors">5. Chính trực</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Nhất quán trong suy nghĩ, lời nói và hành động. Chúng tôi luôn giữ lời hứa, làm điều đúng và đấu tranh cho những giá trị tốt nhất.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Corporate Culture - End -->
+
+        <!-- Section: Process - Start -->
+        <section id="quy-trinh" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#6F2CC4] font-bold text-sm tracking-widest uppercase mb-2 block">QUY TRÌNH CHUẨN MỰC</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Quy trình SEO <span class="gradient-text">đột phá 5 bước</span>
+                    </h2>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+                        <div class="flex flex-col items-center text-center relative step-connector">
+                            <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl shadow-lg mb-6 z-10 relative">01</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Audit & Research</h3>
+                            <p class="text-sm text-slate-500">Phân tích hiện trạng & đối thủ</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center relative step-connector">
+                            <div class="w-16 h-16 rounded-full bg-white border-2 border-[#6F2CC4] flex items-center justify-center text-[#6F2CC4] font-bold text-xl shadow-lg mb-6 z-10 relative">02</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Strategy</h3>
+                            <p class="text-sm text-slate-500">Lên chiến lược từ khóa AI</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center relative step-connector">
+                            <div class="w-16 h-16 rounded-full bg-white border-2 border-[#6F2CC4] flex items-center justify-center text-[#6F2CC4] font-bold text-xl shadow-lg mb-6 z-10 relative">03</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Onpage & Content</h3>
+                            <p class="text-sm text-slate-500">Tối ưu cấu trúc & nội dung</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center relative step-connector">
+                            <div class="w-16 h-16 rounded-full bg-white border-2 border-[#6F2CC4] flex items-center justify-center text-[#6F2CC4] font-bold text-xl shadow-lg mb-6 z-10 relative">04</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Offpage & Entity</h3>
+                            <p class="text-sm text-slate-500">Xây dựng uy tín thương hiệu</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center relative">
+                            <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl shadow-lg mb-6 z-10 relative">05</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Report & Scale</h3>
+                            <p class="text-sm text-slate-500">Báo cáo & Mở rộng quy mô</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Process - End -->
+
+        <!-- Section: Team - Start -->
+        <section id="doi-ngu" class="py-20 bg-white overflow-hidden relative">
+            <!-- Decorative Background Elements -->
+            <div class="absolute -left-20 top-1/4 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute -right-20 bottom-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <!-- Text Content -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-purple-50 text-[#6F2CC4] text-sm font-bold tracking-wide mb-6 border border-purple-100 uppercase">
+                            CON NGƯỜI LÀ SỨC MẠNH
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 uppercase tracking-tight">
+                            ĐỘI NGŨ NHÂN SỰ <br><span class="gradient-text">GTV SEO</span>
+                        </h2>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                            GTV SEO xây dựng đội ngũ chuyên gia với tinh thần tận tâm, cam kết tạo giá trị thực cho khách hàng và cộng đồng. Chúng tôi không chỉ làm việc với chuyên môn cao, mà còn đồng hành như đối tác chiến lược của doanh nghiệp. Thành công của khách hàng là động lực phát triển của GTV.
+                        </p>
+                        
+                        <!-- Key Highlights with Icons -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-purple-100 hover:shadow-sm transition-all">
+                                <div class="w-12 h-12 rounded-lg bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#6F2CC4]">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-800 mb-1">Chuyên Gia Thực Chiến</h4>
+                                    <p class="text-sm text-slate-600">Kinh nghiệm dày dặn qua hàng trăm dự án thành công.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-purple-100 hover:shadow-sm transition-all">
+                                <div class="w-12 h-12 rounded-lg bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#6F2CC4]">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-800 mb-1">Tận Tâm & Cam Kết</h4>
+                                    <p class="text-sm text-slate-600">Đồng hành như đối tác chiến lược, đặt lợi ích khách hàng lên hàng đầu.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#lien-he" class="group inline-flex items-center justify-center px-8 py-3.5 rounded-lg gradient-bg text-white font-bold shadow-lg shadow-purple-500/30 hover:brightness-110 hover:-translate-y-1 transition-all duration-300">
+                            <span>Gặp gỡ chuyên gia</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Image Composition -->
+                    <div class="w-full lg:w-1/2 relative">
+                        <div class="relative">
+                            <!-- Main Team Image with Brand Gradient Overlay Effect -->
+                            <div class="rounded-2xl overflow-hidden shadow-2xl relative z-10 group">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-[#6F2CC4] to-[#0BC5FC] opacity-0 group-hover:opacity-20 transition-opacity duration-500 mix-blend-overlay"></div>
+                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Đội ngũ chuyên gia GTV SEO đang làm việc cùng nhau" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            
+                            <!-- Decorative Floating Element -->
+                            <div class="absolute -bottom-10 -left-10 z-20 animate-bounce-slow hidden md:block">
+                                <div class="p-4 bg-white rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white shadow-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.638 5.214M8.25 14.25h7.5M8.25 9.75h7.5" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Kinh nghiệm</p>
+                                        <p class="text-lg font-bold text-slate-800">50,000+ giờ thực chiến</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Team - End -->
+
+        <!-- Section: Comparison Table (SEO Comparison) - Start -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Semantic SEO & GEO <span class="gradient-text">vs</span> SEO Truyền Thống
+                    </h2>
+                    <p class="text-lg text-slate-600">
+                        Sự khác biệt cốt lõi giữa phương pháp tiếp cận tiên tiến của GTV và cách làm SEO cũ kỹ.
+                    </p>
+                </div>
+
+                <div class="overflow-hidden rounded-xl shadow-lg border border-slate-200 bg-white">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-slate-50">
+                                    <th class="px-6 py-4 text-left font-bold text-slate-800 tracking-wide uppercase text-sm w-1/4">Tiêu chí</th>
+                                    <th class="px-6 py-4 text-left font-bold text-[#6F2CC4] tracking-wide uppercase text-sm w-1/3">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-6 h-6 rounded-full gradient-bg flex items-center justify-center text-white shadow-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            </div>
+                                            <span>Semantic SEO & GEO (GTV)</span>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-4 text-left font-bold text-slate-500 tracking-wide uppercase text-sm w-1/3">SEO Truyền Thống</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <!-- Row 1: Phạm vi từ khóa -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-slate-800">Phạm vi từ khóa</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#0BC5FC] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <span class="text-slate-700">Hàng trăm/nghìn từ khóa, phủ toàn bộ hành trình mua hàng</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                            <span class="text-slate-500">10-20 từ khóa chính</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 2: Phương pháp -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-slate-800">Phương pháp</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#0BC5FC] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <span class="text-slate-700">Topical Authority, Semantic Network, Entity Building</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                            <span class="text-slate-500">Keyword stuffing, Link building số lượng</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 3: AI Search -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-slate-800">AI Search</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#0BC5FC] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <span class="text-slate-700">Tối ưu cho Google + ChatGPT + Perplexity + AI Overview</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#EF004B] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                                            <span class="text-slate-500">Chỉ tối ưu cho Google</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 4: Độ bền vững -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-slate-800">Độ bền vững</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#0BC5FC] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <span class="text-slate-700">Ổn định qua các Google Core Updates</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                            <span class="text-slate-500">Dễ biến động khi thuật toán thay đổi</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 5: Chuyển đổi -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-slate-800">Chuyển đổi</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#0BC5FC] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <span class="text-slate-700">Bao gồm CRO & Conversion Path Optimization</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#EF004B] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                                            <span class="text-slate-500">Không bao gồm</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 6: Đo lường -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-slate-800">Đo lường</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#0BC5FC] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <span class="text-slate-700">SEO metrics + GEO Visibility metrics</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                            <span class="text-slate-500">Chỉ traffic và ranking</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 7: ROI dài hạn -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-slate-800">ROI dài hạn</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-[#0BC5FC] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <span class="text-slate-700 font-medium">Cao — Traffic compound theo thời gian</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                            <span class="text-slate-500">Thấp — Phụ thuộc ranking từ khóa</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Table Summary Footer -->
+                    <div class="bg-slate-50 px-6 py-4 text-sm text-slate-600 text-center italic">
+                        SEO truyền thống phù hợp với ngân sách hạn hẹp, ngắn hạn. Semantic SEO & GEO phù hợp với doanh nghiệp muốn xây dựng kênh organic bền vững, dài hạn và dẫn đầu trong kỷ nguyên AI Search.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Comparison Table (SEO Comparison) - End -->
+
+        <!-- Section: Benefits - Start -->
+        <section id="giai-phap" class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+                            Tại sao chọn <br>
+                            <span class="gradient-text">GTV SEO Agency?</span>
+                        </h2>
+                        <p class="text-lg text-slate-600 mb-8">
+                            Không chỉ là dịch vụ SEO, chúng tôi mang đến giải pháp tăng trưởng toàn diện thông qua sự kết hợp của công nghệ AI và tư duy Marketing hiện đại.
+                        </p>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <div class="p-2 bg-blue-50 rounded-lg mr-4 mt-1">
+                                    <svg class="w-5 h-5 text-[#0BC5FC]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-800">Công nghệ AI độc quyền</h4>
+                                    <p class="text-slate-600">Tối ưu hóa thời gian, tăng độ chính xác và hiệu quả lên 200%.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="p-2 bg-blue-50 rounded-lg mr-4 mt-1">
+                                    <svg class="w-5 h-5 text-[#0BC5FC]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-800">Cam kết KPI rõ ràng</h4>
+                                    <p class="text-slate-600">Minh bạch trong từng con số, hoàn tiền nếu không đạt kết quả.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="p-2 bg-blue-50 rounded-lg mr-4 mt-1">
+                                    <svg class="w-5 h-5 text-[#0BC5FC]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-800">Đội ngũ thực chiến</h4>
+                                    <p class="text-slate-600">Kinh nghiệm triển khai thành công cho hơn 500+ dự án lớn nhỏ.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative">
+                        <div class="rounded-2xl bg-slate-50 p-8 border border-slate-100 shadow-xl">
+                             <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                                 <div class="px-6 py-4 bg-slate-50 border-b border-slate-100 font-bold text-slate-700 flex justify-between">
+                                     <span>Hiệu quả Dự án Demo</span>
+                                     <span class="text-[#6F2CC4] text-sm">Live Report</span>
+                                 </div>
+                                 <div class="p-6">
+                                     <div class="space-y-6">
+                                         <div>
+                                            <div class="flex justify-between items-center mb-2">
+                                                <span class="text-slate-500 text-sm">Traffic Organic</span>
+                                                <span class="text-green-600 font-bold text-sm">+150%</span>
+                                            </div>
+                                            <div class="text-2xl font-bold text-slate-800">12,500 <span class="text-sm font-normal text-slate-400">/ tháng</span></div>
+                                            <div class="w-full h-2 bg-slate-100 rounded-full mt-2 overflow-hidden">
+                                                <div class="h-full bg-green-500 w-[75%]"></div>
+                                            </div>
+                                         </div>
+                                         <div>
+                                            <div class="flex justify-between items-center mb-2">
+                                                <span class="text-slate-500 text-sm">Từ khóa Top 3</span>
+                                                <span class="text-green-600 font-bold text-sm">+80%</span>
+                                            </div>
+                                            <div class="text-2xl font-bold text-slate-800">450 <span class="text-sm font-normal text-slate-400">keys</span></div>
+                                            <div class="w-full h-2 bg-slate-100 rounded-full mt-2 overflow-hidden">
+                                                <div class="h-full bg-[#0BC5FC] w-[60%]"></div>
+                                            </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Benefits - End -->
+
+        <!-- Section: CTA Final - Start -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[#1E293B]"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#6F2CC4] to-[#0BC5FC] opacity-90"></div>
+            
+            <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Sẵn sàng thống lĩnh Google?</h2>
+                <p class="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
+                    Đừng để đối thủ vượt mặt. Hãy để GTV SEO xây dựng chiến lược tăng trưởng bền vững cho doanh nghiệp của bạn ngay hôm nay.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#tu-van" class="px-8 py-4 bg-white text-[#6F2CC4] rounded-lg font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">
+                        Nhận báo giá SEO
+                    </a>
+                    <a href="tel:0909090909" class="px-8 py-4 bg-transparent border border-white text-white rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">
+                        Gọi ngay: 0909 xxx xxx
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Section: CTA Final - End -->
+    </main>
+
+    <!-- Section: Footer - Start -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded gradient-bg flex items-center justify-center text-white font-bold">G</div>
+                        <span class="text-xl font-bold text-white">GTV SEO</span>
+                    </div>
+                    <p class="text-sm text-slate-400">
+                        Đơn vị tiên phong cung cấp giải pháp SEO tổng thể kết hợp sức mạnh AI.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Dịch vụ</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Dịch vụ SEO Tổng thể</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Dịch vụ SEO Audit</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Dịch vụ Entity</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Công ty</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Về chúng tôi</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tuyển dụng</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Kết nối</h4>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-slate-800 rounded flex items-center justify-center hover:bg-[#6F2CC4] transition-colors cursor-pointer text-white font-bold">f</div>
+                        <div class="w-8 h-8 bg-slate-800 rounded flex items-center justify-center hover:bg-[#6F2CC4] transition-colors cursor-pointer text-white font-bold">in</div>
+                        <div class="w-8 h-8 bg-slate-800 rounded flex items-center justify-center hover:bg-[#6F2CC4] transition-colors cursor-pointer text-white font-bold">yt</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+                &copy; 2024 GTV SEO. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Section: Footer - End -->
+</body>
+</html>
