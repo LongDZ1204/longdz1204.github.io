@@ -1,1 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trần Bình Long - Semantic SEO Specialist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        // CẬP NHẬT: Đổi sang màu Xanh Dương (Blue-500)
+                        primary: '#3b82f6', 
+                        dark: '#0f172a',    // Slate 900
+                        card: '#1e293b',    // Slate 800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6; /* Update scrollbar hover */
+        }
 
+        /* Animation Utilities */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Grid Background Pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-mono text-primary font-bold text-xl">
+                    &lt;TBL_SEO /&gt;
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-primary transition-colors">Về tôi</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">Kỹ năng</a>
+                    <a href="#experience" class="hover:text-primary transition-colors">Kinh nghiệm</a>
+                    <a href="#projects" class="hover:text-primary transition-colors">Dự án</a>
+                </div>
+                <div>
+                    <a href="mailto:binhlongsd@gmail.com" class="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded hover:bg-primary hover:text-white transition-all font-mono text-sm">
+                        Liên hệ ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative min-h-screen flex items-center pt-16 bg-grid overflow-hidden">
+        <!-- Decoration Orbs -->
+        <div class="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl filter opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl filter opacity-30"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="flex-1 text-center md:text-left fade-in-up delay-100">
+                    <div class="inline-block px-3 py-1 mb-4 text-xs font-mono text-primary border border-primary/30 rounded-full bg-primary/5">
+                        OPEN TO WORK
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                        Trần Bình <span class="text-primary">Long</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-slate-400 mb-6 font-mono h-8">
+                        I am a <span id="typing-text" class="text-white typing-effect"></span>
+                    </h2>
+                    <p class="text-slate-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        Chuyên gia SEO tập trung vào <strong class="text-white">Semantic SEO</strong>, <strong class="text-white">Entity Building</strong> và <strong class="text-white">Topical Authority</strong>. Kết hợp tư duy lập trình (Vibe Coder) để tối ưu hóa quy trình SEO và phân tích dữ liệu.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-blue-600 transition-all shadow-lg shadow-primary/25">
+                            Tải CV PDF
+                        </a>
+                        <a href="#projects" class="px-6 py-3 border border-slate-600 rounded hover:border-primary hover:text-primary transition-all">
+                            Xem Case Studies
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="mt-12 grid grid-cols-3 gap-4 border-t border-slate-700 pt-8">
+                        <div>
+                            <div class="text-2xl font-bold text-white">1+</div>
+                            <div class="text-xs text-slate-500 uppercase tracking-wider">Năm kinh nghiệm</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">Top 10</div>
+                            <div class="text-xs text-slate-500 uppercase tracking-wider">Hàng loạt Keyword</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">GPA 8.8</div>
+                            <div class="text-xs text-slate-500 uppercase tracking-wider">Cao đẳng FPT</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image/Avatar -->
+                <div class="flex-1 relative fade-in-up delay-200">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+                        <!-- CẬP NHẬT: Gradient nền ảnh sang xanh dương/tím -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-cyan-400 rounded-full blur opacity-75"></div>
+                        
+                        <!-- CẬP NHẬT: Link ảnh mới -->
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfpbNvq0qP2wOXc_SCs5BKSYtF1jh8vq-yRGRb-iFYACCGAJag-K6pLaYdWUKPcYbK0e_WNdVu22H5c6rvum1U3s8Kx1vu4BU-M9RFLNhtjbICFg_qyIlIIjOFYBuXqJHW_OGX8As7RoAez41LF3tmp8R3zEVw?key=JeVlgVoxJSwkKOYKBBbL5g" 
+                             alt="Trần Bình Long" 
+                             class="relative w-full h-full object-cover rounded-full border-4 border-slate-800 shadow-2xl" 
+                             onerror="this.src='https://ui-avatars.com/api/?name=Long+Tran&background=3b82f6&color=fff&size=300'">
+                        
+                        <!-- Floating Tech Badges -->
+                        <div class="absolute -top-4 -right-4 bg-card p-3 rounded-lg shadow-xl border border-slate-700 animate-bounce" style="animation-duration: 3s;">
+                            <i class="fab fa-google text-2xl text-white"></i>
+                        </div>
+                        <div class="absolute bottom-4 -left-4 bg-card p-3 rounded-lg shadow-xl border border-slate-700 animate-bounce" style="animation-duration: 4s;">
+                            <i class="fas fa-project-diagram text-2xl text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Charts Section -->
+    <section id="skills" class="py-20 bg-card/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold text-white mb-2">Bộ Kỹ Năng & Tư Duy</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Radar Chart -->
+                <div class="bg-dark p-6 rounded-2xl border border-slate-700 shadow-lg fade-in-up">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+
+                <!-- Skill Details -->
+                <div class="space-y-6 fade-in-up">
+                    <!-- Tech SEO -->
+                    <div class="group">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold text-white group-hover:text-primary transition-colors">Technical SEO & Schema</span>
+                            <span class="text-primary font-mono">85%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1">Cấu trúc Silo, Schema Markup (JSON-LD), PageSpeed Optimization.</p>
+                    </div>
+
+                    <!-- Semantic/Content -->
+                    <div class="group">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold text-white group-hover:text-primary transition-colors">Semantic Content & NLP</span>
+                            <span class="text-primary font-mono">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1">Entity Building, Topic Cluster, Hemingway Rules, KGR.</p>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="group">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold text-white group-hover:text-primary transition-colors">SEO Tools & Analytics</span>
+                            <span class="text-primary font-mono">80%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1">Ahrefs, GSC, GA4, Screaming Frog.</p>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="mt-8 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">Tự học (Self-Learning)</span>
+                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">Làm việc độc lập</span>
+                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">Tư duy phản biện</span>
+                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">AI Prompting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 bg-dark relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold text-white mb-2">Hành Trình Sự Nghiệp</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+
+            <div class="relative border-l-2 border-slate-700 ml-4 md:ml-0 md:pl-0 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative fade-in-up">
+                    <!-- Dot -->
+                    <div class="absolute -left-[21px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-dark"></div>
+                    
+                    <div class="md:flex md:justify-between md:gap-8 group">
+                        <!-- Date (Left on Desktop) -->
+                        <div class="md:w-1/2 md:text-right mb-2 md:mb-0">
+                            <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-mono rounded border border-primary/20">
+                                10/2024 - Hiện tại
+                            </span>
+                        </div>
+                        <!-- Content (Right on Desktop) -->
+                        <div class="md:w-1/2 pl-6 md:pl-0">
+                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                Thực Tập Sinh SEO (Part-time)
+                            </h3>
+                            <h4 class="text-slate-400 mb-2">TruongPhatCo.com.vn</h4>
+                            <ul class="list-disc list-outside ml-4 text-slate-400 space-y-2 text-sm">
+                                <li>Thiết kế và tối ưu giao diện website hướng tới trải nghiệm người dùng (UX).</li>
+                                <li>Lên kế hoạch <strong>SEO tổng thể</strong>, xây dựng Topical Map.</li>
+                                <li>Triển khai cấu trúc <strong>Silo vật lý</strong> cho URL để tối ưu dòng chảy sức mạnh (Link Juice).</li>
+                                <li>Viết bài chuẩn SEO áp dụng quy tắc Hemingway, đảm bảo tính dễ đọc và chuẩn NLP.</li>
+                                <li><strong>Kết quả:</strong> Đẩy 10+ từ khóa khó vào Top 10 Google.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative fade-in-up">
+                    <div class="absolute -left-[21px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-slate-600 ring-4 ring-dark group-hover:bg-primary transition-colors"></div>
+                    
+                    <div class="md:flex md:justify-between md:gap-8 flex-row-reverse group">
+                        <!-- Date (Right on Desktop due to reverse) -->
+                        <div class="md:w-1/2 mb-2 md:mb-0"> <!-- Changed text alignment logic via flex-row-reverse -->
+                             <span class="inline-block px-3 py-1 bg-slate-800 text-slate-400 text-sm font-mono rounded border border-slate-700">
+                                05/2024 - 08/2024
+                            </span>
+                        </div>
+                        <!-- Content -->
+                        <div class="md:w-1/2 pl-6 md:pl-0 md:text-right">
+                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                Chuyên Viên SEO
+                            </h3>
+                            <h4 class="text-slate-400 mb-2">NiceCoco.net</h4>
+                            <ul class="list-disc list-outside ml-4 md:ml-0 md:mr-4 md:list-none text-slate-400 space-y-2 text-sm">
+                                <li>Nghiên cứu từ khóa theo phương pháp <strong>KGR (Keyword Golden Ratio)</strong> để đánh chiếm thị ngách.</li>
+                                <li>Xây dựng chiến lược Internal Link theo mô hình cụm chủ đề (Topic Cluster).</li>
+                                <li>Triển khai SEO Off-page: Xây dựng hệ thống Social Entity để xác thực thương hiệu với Google.</li>
+                                <li><strong>Kết quả:</strong> 1000 Traffic/tháng, 10 từ khóa Top 10, 50+ từ khóa Top 100.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="py-20 bg-card/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold text-white mb-2">Dự Án Tiêu Biểu</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover:border-primary transition-all hover:-translate-y-2 duration-300 fade-in-up group">
+                    <div class="h-40 bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-shopping-bag text-5xl text-slate-600 group-hover:text-primary transition-colors z-10"></i>
+                        <div class="absolute inset-0 bg-grid opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">NiceCoco.net</h3>
+                        <p class="text-slate-400 text-sm mb-4">Website thương mại điện tử mảng thời trang/phụ kiện.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Entity Setup</span>
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">KGR</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-700">
+                            <span class="text-emerald-400 font-mono text-sm"><i class="fas fa-chart-line mr-1"></i> +1000 Traffic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover:border-primary transition-all hover:-translate-y-2 duration-300 fade-in-up delay-100 group">
+                    <div class="h-40 bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-building text-5xl text-slate-600 group-hover:text-primary transition-colors z-10"></i>
+                         <div class="absolute inset-0 bg-grid opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">TruongPhatCo</h3>
+                        <p class="text-slate-400 text-sm mb-4">Website doanh nghiệp, tối ưu cấu trúc kỹ thuật.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Silo Structure</span>
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">UX/UI</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-700">
+                            <span class="text-emerald-400 font-mono text-sm"><i class="fas fa-check-circle mr-1"></i> Top 10 key khó</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 (Placeholder for future) -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 border-dashed hover:border-primary transition-all fade-in-up delay-200 flex flex-col items-center justify-center p-6 text-center h-full min-h-[300px]">
+                    <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-4">
+                        <i class="fas fa-plus text-2xl text-slate-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Personal Blog</h3>
+                    <p class="text-slate-400 text-sm">Đang phát triển website cá nhân chia sẻ về Semantic SEO & Finance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark border-t border-slate-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-8">Let's Connect</h2>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="mailto:binhlongsd@gmail.com" class="text-slate-400 hover:text-primary text-3xl transition-transform hover:scale-110">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" class="text-slate-400 hover:text-primary text-3xl transition-transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://binhlong.xyz" class="text-slate-400 hover:text-primary text-3xl transition-transform hover:scale-110">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+            <p class="text-slate-600 text-sm font-mono">
+                © 2024 Trần Bình Long. Designed by AI, Architected by Human.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Chart.js Configuration
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Technical SEO', 'Content/NLP', 'On-page', 'Off-page/Entity', 'Data Analysis', 'Web Design'],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [85, 90, 95, 75, 80, 70],
+                    // CẬP NHẬT: Màu biểu đồ khớp với theme xanh dương
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)', 
+                    borderColor: '#3b82f6',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#3b82f6',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { color: '#94a3b8', font: { size: 12 } },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                },
+                maintainAspectRatio: false
+            }
+        });
+
+        // 2. Typing Effect
+        const textElement = document.getElementById('typing-text');
+        const phrases = ['Semantic SEO Specialist', 'Vibe Coder', 'Growth Mindset Learner'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                setTimeout(type, 2000); // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(type, 500); // Pause before new word
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', type);
+
+        // 3. Scroll Animation (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
