@@ -3,473 +3,700 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trần Bình Long - Semantic SEO Specialist</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Interimm | Tư Vấn Đầu Tư Định Cư Quốc Tế Cao Cấp</title>
+    <meta name="description" content="Interimm cung cấp các giải pháp đầu tư định cư đa dạng tại Mỹ, Úc, Canada, Châu Âu. Đồng hành kiến tạo cuộc sống mới thịnh vượng.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
                     colors: {
-                        // CẬP NHẬT: Đổi sang màu Xanh Dương (Blue-500)
-                        primary: '#3b82f6', 
-                        dark: '#0f172a',    // Slate 900
-                        card: '#1e293b',    // Slate 800
+                        navy: '#2D3279',
+                        'navy-dark': '#1B1F5C',
+                        midnight: '#0B0E3B',
+                        gold: '#FFDD55', /* Yêu cầu đổi mã màu vàng chính */
+                        'gold-bright': '#FFE57F',
+                        'light-gray': '#F5F5F5',
+                        body: '#333333',
+                        caption: '#666666'
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        sans: ['"Open Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 2px 10px rgba(0,0,0,0.08)',
+                        'card-hover': '0 10px 25px rgba(0,0,0,0.15)',
+                    },
+                    maxWidth: {
+                        'container': '1200px',
                     }
                 }
             }
         }
     </script>
+
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6; /* Update scrollbar hover */
-        }
-
-        /* Animation Utilities */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .typing-effect::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { line-height: 1.7; }
         
-        /* Grid Background Pattern */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        /* Clamp text on extreme mobile to prevent layout break */
+        @media (max-width: 640px) {
+            .mobile-line-clamp {
+                display: -webkit-box;
+                -webkit-line-clamp: 7;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+            }
         }
     </style>
 </head>
-<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white">
+<body class="font-sans text-body bg-white antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-slate-700">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 font-mono text-primary font-bold text-xl">
-                    &lt;TBL_SEO /&gt;
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="hover:text-primary transition-colors">Về tôi</a>
-                    <a href="#skills" class="hover:text-primary transition-colors">Kỹ năng</a>
-                    <a href="#experience" class="hover:text-primary transition-colors">Kinh nghiệm</a>
-                    <a href="#projects" class="hover:text-primary transition-colors">Dự án</a>
-                </div>
-                <div>
-                    <a href="mailto:binhlongsd@gmail.com" class="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded hover:bg-primary hover:text-white transition-all font-mono text-sm">
-                        Liên hệ ngay
+    <!-- Top Bar -->
+    <div class="bg-midnight text-white text-sm py-2 hidden md:block">
+        <div class="max-w-container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    0901 328 328
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    info@interimm.vn
+                </span>
+            </div>
+            <div class="font-montserrat tracking-wide">CHUYÊN GIA TƯ VẤN ĐẦU TƯ ĐỊNH CƯ QUỐC TẾ</div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="font-playfair font-bold text-3xl text-navy tracking-tight">
+                INTERIMM<span class="text-gold">.</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#chuong-trinh" class="font-montserrat text-sm font-semibold text-body hover:text-navy transition-colors">Chương Trình</a>
+                <a href="#tai-sao" class="font-montserrat text-sm font-semibold text-body hover:text-navy transition-colors">Về Chúng Tôi</a>
+                <a href="#cau-chuyen" class="font-montserrat text-sm font-semibold text-body hover:text-navy transition-colors">Thành Công</a>
+                <a href="#tin-tuc" class="font-montserrat text-sm font-semibold text-body hover:text-navy transition-colors">Tin Tức</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="#lien-he" class="hidden md:inline-block bg-navy text-white font-montserrat font-semibold text-sm uppercase tracking-[2px] px-6 py-2.5 rounded-[12px] hover:bg-navy-dark transition-all duration-300">
+                Nhận Tư Vấn
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-navy focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-light-gray pt-16 pb-24 lg:pt-24 lg:pb-32 relative z-0">
+        <div class="max-w-container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="order-2 lg:order-1">
+                <h1 class="font-playfair font-bold text-navy text-4xl lg:text-5xl leading-tight mb-6">
+                    Kiến Tạo Tương Lai<br>Cho Cả Gia Đình
+                </h1>
+                <p class="text-body text-lg mb-10">
+                    Interimm cung cấp các chương trình đầu tư định cư đa dạng và chuyên biệt. Với sự hỗ trợ tận tâm từ đội ngũ chuyên gia, chúng tôi luôn đồng hành giúp gia đình bạn kiến tạo một cuộc sống mới an toàn và thịnh vượng tại các quốc gia phát triển.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#chuong-trinh" class="inline-flex justify-center items-center gap-2 bg-gold text-navy font-montserrat font-bold text-sm px-6 py-3.5 rounded-[12px] hover:bg-gold-bright transition-all duration-300 shadow-md">
+                        So sánh chương trình định cư
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                    <a href="#lien-he" class="inline-flex justify-center items-center gap-2 border-2 border-navy text-navy font-montserrat font-semibold text-sm px-6 py-3.5 rounded-[12px] hover:bg-navy hover:text-white transition-all duration-300">
+                        Liên hệ tư vấn
                     </a>
                 </div>
             </div>
+            
+            <!-- Hero Image -->
+            <div class="order-1 lg:order-2">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf2E-z__jDqm-Iv3LTS0HlBO05WlM5iWtVwdUBvQ--DAO79ikTnmQLwjFrd26csIPuz1n8aRd49FYfdGeE469mWFZYddC-aGRRFO870zLq77BhST031BnZv-hvDDIupMiia-_fQ4rK8_yXK8hgPpT2Wr5xiHAU" alt="Đầu tư định cư quốc tế Interimm" class="w-full h-auto rounded-[12px] shadow-card">
+            </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section id="about" class="relative min-h-screen flex items-center pt-16 bg-grid overflow-hidden">
-        <!-- Decoration Orbs -->
-        <div class="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl filter opacity-30 animate-pulse"></div>
-        <div class="absolute bottom-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl filter opacity-30"></div>
+    <!-- Floating Stats Bar -->
+    <div class="relative z-20 max-w-[1100px] mx-auto px-4 -mt-12 lg:-mt-16 mb-16">
+        <div class="bg-white rounded-[16px] shadow-2xl py-8 px-4 lg:px-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 border border-gray-100">
+            <!-- Stat 1 -->
+            <div class="flex flex-col items-center text-center">
+                <svg class="w-8 h-8 text-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                <div class="font-montserrat font-bold text-2xl lg:text-3xl text-navy mb-1.5">1.000+</div>
+                <div class="text-[10px] lg:text-xs text-caption uppercase tracking-[1px] font-semibold">Thẻ xanh được cấp</div>
+            </div>
+            <!-- Stat 2 -->
+            <div class="flex flex-col items-center text-center">
+                <svg class="w-8 h-8 text-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="font-montserrat font-bold text-2xl lg:text-3xl text-navy mb-1.5">200tr<span class="text-sm text-gold ml-1">USD</span></div>
+                <div class="text-[10px] lg:text-xs text-caption uppercase tracking-[1px] font-semibold">Nguồn vốn đã huy động</div>
+            </div>
+            <!-- Stat 3 -->
+            <div class="flex flex-col items-center text-center">
+                <svg class="w-8 h-8 text-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="font-montserrat font-bold text-2xl lg:text-3xl text-navy mb-1.5">10+</div>
+                <div class="text-[10px] lg:text-xs text-caption uppercase tracking-[1px] font-semibold">Năm kinh nghiệm di trú</div>
+            </div>
+            <!-- Stat 4 -->
+            <div class="flex flex-col items-center text-center">
+                <svg class="w-8 h-8 text-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <div class="font-montserrat font-bold text-2xl lg:text-3xl text-navy mb-1.5">60+</div>
+                <div class="text-[10px] lg:text-xs text-caption uppercase tracking-[1px] font-semibold">Dự án đã thành công</div>
+            </div>
+        </div>
+    </div>
 
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <!-- Text Content -->
-                <div class="flex-1 text-center md:text-left fade-in-up delay-100">
-                    <div class="inline-block px-3 py-1 mb-4 text-xs font-mono text-primary border border-primary/30 rounded-full bg-primary/5">
-                        OPEN TO WORK
+    <!-- Programs Section -->
+    <section id="chuong-trinh" class="py-20 bg-white">
+        <div class="max-w-container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-montserrat font-bold text-navy text-2xl md:text-3xl uppercase tracking-[2px]">Chương Trình Đầu Tư Định Cư Tại Interimm</h2>
+                <div class="w-[60px] h-[3px] bg-gold mx-auto mt-4 mb-6"></div>
+                <p class="text-body">Interimm cung cấp các giải pháp đầu tư định cư đa dạng tại Mỹ, Úc, Canada, New Zealand, Châu Âu và vùng Caribbean. Từ nền tảng hồ sơ và nguyện vọng riêng biệt của từng gia đình, chúng tôi trực tiếp hoạch định một chiến lược di trú cá nhân hóa nhằm đảm bảo lộ trình an cư thành công và vững chắc.</p>
+            </div>
+
+            <!-- Cards Grid (Mobile: 2 cols, Desktop: 3 cols) -->
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[30px]">
+                
+                <!-- Card 1: Mỹ -->
+                <div class="flex flex-col bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden border border-gray-100 group">
+                    <div class="relative h-28 md:h-56 overflow-hidden">
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdC8s4Vjtrtzfj4cxC4dZgLV1AOfBA3mJr6ZuqATzE3jCKF-555S5SYLTzP6DQ0C8gKSM8v91fXwOKRgf3BxUUai5zUF1hir1aSfToBkQhxgdD2U6qiej06rZMgqb2ot4A6SusKcAOzegHUlKI0cislNteUk1M" alt="Định cư Mỹ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-2 left-2 md:top-4 md:left-4 bg-gold text-navy text-[8px] md:text-[10px] font-montserrat font-bold uppercase tracking-wider px-2 py-1 md:px-3 md:py-1.5 rounded-[4px] shadow-sm">Chương Trình Chính</div>
+                        <div class="absolute top-2 right-2 md:top-4 md:right-4 w-6 h-6 md:w-9 md:h-9 rounded-full overflow-hidden shadow-md border-2 border-white bg-white">
+                            <img src="https://flagcdn.com/us.svg" alt="Mỹ" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-                        Trần Bình <span class="text-primary">Long</span>
-                    </h1>
-                    <h2 class="text-xl md:text-2xl text-slate-400 mb-6 font-mono h-8">
-                        I am a <span id="typing-text" class="text-white typing-effect"></span>
-                    </h2>
-                    <p class="text-slate-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                        Chuyên gia SEO tập trung vào <strong class="text-white">Semantic SEO</strong>, <strong class="text-white">Entity Building</strong> và <strong class="text-white">Topical Authority</strong>. Kết hợp tư duy lập trình (Vibe Coder) để tối ưu hóa quy trình SEO và phân tích dữ liệu.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="#contact" class="px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-blue-600 transition-all shadow-lg shadow-primary/25">
-                            Tải CV PDF
+                    <div class="p-3 md:p-6 flex flex-col flex-grow">
+                        <h3 class="font-playfair font-bold text-navy text-base md:text-2xl mb-2 md:mb-3">Định Cư Mỹ</h3>
+                        <p class="text-body text-[11px] md:text-sm mb-4 md:mb-6 flex-grow leading-relaxed mobile-line-clamp">Đầu tư định cư Mỹ mang đến cơ hội nhận thẻ xanh cho cả gia đình thông qua chương trình đầu tư EB-5 với mức vốn từ 800.000 USD hoặc visa doanh nhân L-1 dành cho chủ doanh nghiệp. Nhà đầu tư cùng người thân được hưởng trọn vẹn đặc quyền sinh sống, học tập, làm việc và kinh doanh tại bất kỳ tiểu bang nào của Mỹ.</p>
+                        <a href="#" class="inline-flex items-center gap-1 md:gap-2 text-navy font-montserrat font-bold text-[11px] md:text-sm hover:text-gold transition-colors mt-auto w-fit">
+                            Tìm hiểu thêm
+                            <svg class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="#projects" class="px-6 py-3 border border-slate-600 rounded hover:border-primary hover:text-primary transition-all">
-                            Xem Case Studies
+                    </div>
+                </div>
+
+                <!-- Card 2: Châu Âu -->
+                <div class="flex flex-col bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden border border-gray-100 group">
+                    <div class="relative h-28 md:h-56 overflow-hidden">
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfwDFrVuzjl2KOB7UOE6xw-JFdeetJj5X9Hvcjj20DYHlpdUaRbeZHh-S9tISkWVWqFOv-UTbiAiCUz4PPyWDQ7oG2UiH9fAi1k3cHmRe7h2FMGKIf2VN8RuGnz22RuLJBxBxs8gp1ELSCMNlBNVM0tfxK9Fg" alt="Định cư Châu Âu" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-2 left-2 md:top-4 md:left-4 bg-gold text-navy text-[8px] md:text-[10px] font-montserrat font-bold uppercase tracking-wider px-2 py-1 md:px-3 md:py-1.5 rounded-[4px] shadow-sm">Chương Trình Chính</div>
+                        <div class="absolute top-2 right-2 md:top-4 md:right-4 w-6 h-6 md:w-9 md:h-9 rounded-full overflow-hidden shadow-md border-2 border-white bg-white">
+                            <img src="https://flagcdn.com/eu.svg" alt="Châu Âu" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-3 md:p-6 flex flex-col flex-grow">
+                        <h3 class="font-playfair font-bold text-navy text-base md:text-2xl mb-2 md:mb-3">Định Cư Châu Âu</h3>
+                        <p class="text-body text-[11px] md:text-sm mb-4 md:mb-6 flex-grow leading-relaxed mobile-line-clamp">Các chương trình Châu Âu (Bồ Đào Nha, Hy Lạp, Malta, Tây Ban Nha) mở ra đặc quyền tự do đi lại toàn khối Schengen qua các diện Golden Visa với mức đầu tư từ 250.000 EUR. Gia đình được tiếp cận nền y tế tiên tiến, giáo dục chuẩn quốc tế và lộ trình tiến tới quốc tịch minh bạch.</p>
+                        <a href="#" class="inline-flex items-center gap-1 md:gap-2 text-navy font-montserrat font-bold text-[11px] md:text-sm hover:text-gold transition-colors mt-auto w-fit">
+                            Tìm hiểu thêm
+                            <svg class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                     </div>
+                </div>
+
+                <!-- Card 3: Úc -->
+                <div class="flex flex-col bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden border border-gray-100 group">
+                    <div class="relative h-28 md:h-56 overflow-hidden">
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeIyPVOYK1RVIJQB6G7tzGa0D-nDbVZadstN4pW0YCmmYhmvRwB2A9_ilSq3jPDX3yEjKr4q9K7Y4_A3bnAN5-a3xXyugMTztV9k1m9D2wUsVQikDyzLS87sZllpDgfKDt3Vb2jYB9UJcdbZsp9qIhzJx99fPc" alt="Định cư Úc" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-2 right-2 md:top-4 md:right-4 w-6 h-6 md:w-9 md:h-9 rounded-full overflow-hidden shadow-md border-2 border-white bg-white">
+                            <img src="https://flagcdn.com/au.svg" alt="Úc" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-3 md:p-6 flex flex-col flex-grow">
+                        <h3 class="font-playfair font-bold text-navy text-base md:text-2xl mb-2 md:mb-3">Định Cư Úc</h3>
+                        <p class="text-body text-[11px] md:text-sm mb-4 md:mb-6 flex-grow leading-relaxed mobile-line-clamp">Lộ trình định cư Úc kiến tạo môi trường sống lý tưởng thông qua các diện visa dành riêng cho giới chủ doanh nghiệp và nhà đầu tư với mức vốn từ 200.000 AUD. Gia đình bạn thụ hưởng hệ thống an sinh xã hội toàn diện, y tế Medicare miễn phí và nền giáo dục hàng đầu.</p>
+                        <a href="#" class="inline-flex items-center gap-1 md:gap-2 text-navy font-montserrat font-bold text-[11px] md:text-sm hover:text-gold transition-colors mt-auto w-fit">
+                            Tìm hiểu thêm
+                            <svg class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: New Zealand -->
+                <div class="flex flex-col bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden border border-gray-100 group">
+                    <div class="relative h-28 md:h-56 overflow-hidden">
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeIT1nxo0l6nlifFgNlFn3fRLVUdMrRM3-hMWx5bmX5fwyGK28J1DE_a3jMDdD00h9PlKyQDCDJeDh9W1aLoTAPpArsqCQRDj6DIOs8Yz2Jqx6033_077j14MhhsPcrqMtrKwhF3wD8PK7JmHeWZpJfuNx_UQM" alt="Định cư New Zealand" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-2 right-2 md:top-4 md:right-4 w-6 h-6 md:w-9 md:h-9 rounded-full overflow-hidden shadow-md border-2 border-white bg-white">
+                            <img src="https://flagcdn.com/nz.svg" alt="New Zealand" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-3 md:p-6 flex flex-col flex-grow">
+                        <h3 class="font-playfair font-bold text-navy text-base md:text-2xl mb-2 md:mb-3">Định Cư New Zealand</h3>
+                        <p class="text-body text-[11px] md:text-sm mb-4 md:mb-6 flex-grow leading-relaxed mobile-line-clamp">Chương trình định cư New Zealand mang lại quyền thường trú nhân thông qua diện Doanh nhân hoặc Đầu tư chủ động với mức vốn từ 5 triệu NZD. Gia đình bạn tận hưởng không gian sống an toàn bậc nhất toàn cầu cùng hệ thống giáo dục chuẩn Anh quốc.</p>
+                        <a href="#" class="inline-flex items-center gap-1 md:gap-2 text-navy font-montserrat font-bold text-[11px] md:text-sm hover:text-gold transition-colors mt-auto w-fit">
+                            Tìm hiểu thêm
+                            <svg class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Canada -->
+                <div class="flex flex-col bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden border border-gray-100 group">
+                    <div class="relative h-28 md:h-56 overflow-hidden">
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfdyX1XWM56vdIuxyAvdBU37WxieqHuPkEuhYJvgxxRbgEzOMC16gxcEjd2v3iNKBVkhE6EN9WV9ofB72-Zp-2O-zZkc1sMAFJbloW3kp3TbS8sdY2gtOO631KrLcaS5zBWKYlO12LPT1pxdbmz7Uuv0Pqjh2w" alt="Định cư Canada" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-2 right-2 md:top-4 md:right-4 w-6 h-6 md:w-9 md:h-9 rounded-full overflow-hidden shadow-md border-2 border-white bg-white">
+                            <img src="https://flagcdn.com/ca.svg" alt="Canada" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-3 md:p-6 flex flex-col flex-grow">
+                        <h3 class="font-playfair font-bold text-navy text-base md:text-2xl mb-2 md:mb-3">Định Cư Canada</h3>
+                        <p class="text-body text-[11px] md:text-sm mb-4 md:mb-6 flex-grow leading-relaxed mobile-line-clamp">Giải pháp định cư Canada thiết lập quyền thường trú nhân thông qua diện Start-up Visa (SUV) hoặc Doanh nhân tỉnh bang với mức đầu tư từ 200.000 CAD. Cả gia đình được bảo vệ bởi hệ thống phúc lợi xuất sắc và môi trường kinh doanh phát triển bền vững.</p>
+                        <a href="#" class="inline-flex items-center gap-1 md:gap-2 text-navy font-montserrat font-bold text-[11px] md:text-sm hover:text-gold transition-colors mt-auto w-fit">
+                            Tìm hiểu thêm
+                            <svg class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Caribbean -->
+                <div class="flex flex-col bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden border border-gray-100 group">
+                    <div class="relative h-28 md:h-56 overflow-hidden">
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdrZwGihjZJwq9WoiP7Vwf1U1p4xv7dIV6LAeQUJxPZzaieLF8obN_sbPPyCsCq3UfGqp5kX1_4MAy6Cljs-98qR4YlSKEtgYqrFNccPX41fSa0EyboklYrD8Jfaedwz6f3rSF1f8w0x79CpisohucGmKfMAfc" alt="Định cư Caribbean" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-2 right-2 md:top-4 md:right-4 w-6 h-6 md:w-9 md:h-9 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-white text-navy">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-3 md:p-6 flex flex-col flex-grow">
+                        <h3 class="font-playfair font-bold text-navy text-base md:text-2xl mb-2 md:mb-3">Định Cư Caribbean</h3>
+                        <p class="text-body text-[11px] md:text-sm mb-4 md:mb-6 flex-grow leading-relaxed mobile-line-clamp">Vùng Caribbean cấp thẳng hộ chiếu quyền lực thứ hai cho toàn bộ gia đình thông qua mức đóng góp từ 200.000 USD. Nhà đầu tư nắm giữ đặc quyền miễn thị thực nhập cảnh hơn 140 quốc gia và tối ưu hóa các chiến lược thuế tài sản hiệu quả.</p>
+                        <a href="#" class="inline-flex items-center gap-1 md:gap-2 text-navy font-montserrat font-bold text-[11px] md:text-sm hover:text-gold transition-colors mt-auto w-fit">
+                            Tìm hiểu thêm
+                            <svg class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Các dự án đầu tư đang triển khai (Bổ sung theo prompt gốc) -->
+    <section class="py-20 bg-light-gray">
+        <div class="max-w-container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-montserrat font-bold text-navy text-2xl md:text-3xl uppercase tracking-[2px]">Các Dự Án Đầu Tư Đang Triển Khai</h2>
+                <div class="w-[60px] h-[3px] bg-gold mx-auto mt-4 mb-6"></div>
+                <p class="text-body">Khám phá các dự án đầu tư định cư chất lượng cao được Interimm trực tiếp thẩm định khắt khe, đảm bảo an toàn thẻ xanh và lộ trình hoàn vốn minh bạch cho nhà đầu tư.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project Placeholder 1 -->
+                <div class="bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden cursor-pointer group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-400 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        <div class="absolute top-4 left-4 bg-navy text-white text-[10px] font-montserrat font-bold uppercase tracking-wider px-3 py-1.5 rounded-[4px] shadow-sm">Dự án EB-5 Mỹ</div>
+                    </div>
+                    <div class="p-6 border-t border-gold border-opacity-30">
+                        <h4 class="font-montserrat font-bold text-navy text-lg mb-2 group-hover:text-gold transition-colors">Dự Án Trung Tâm Vùng Tiêu Biểu</h4>
+                        <p class="text-sm text-caption mb-4">Dự án bất động sản trọng điểm tại Mỹ, đảm bảo tạo đủ việc làm và được ưu tiên xét duyệt.</p>
+                        <span class="text-xs font-bold text-gold uppercase tracking-[1px]">Đang mở gọi vốn &rarr;</span>
+                    </div>
+                </div>
+                <!-- Project Placeholder 2 -->
+                <div class="bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden cursor-pointer group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-400 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <div class="absolute top-4 left-4 bg-navy text-white text-[10px] font-montserrat font-bold uppercase tracking-wider px-3 py-1.5 rounded-[4px] shadow-sm">Golden Visa Châu Âu</div>
+                    </div>
+                    <div class="p-6 border-t border-gold border-opacity-30">
+                        <h4 class="font-montserrat font-bold text-navy text-lg mb-2 group-hover:text-gold transition-colors">Bất Động Sản Cao Cấp Bồ Đào Nha</h4>
+                        <p class="text-sm text-caption mb-4">Căn hộ dịch vụ hạng sang tại trung tâm Lisbon, tỷ suất sinh lời hấp dẫn, đủ điều kiện Golden Visa.</p>
+                        <span class="text-xs font-bold text-gold uppercase tracking-[1px]">Đang mở gọi vốn &rarr;</span>
+                    </div>
+                </div>
+                <!-- Project Placeholder 3 -->
+                <div class="bg-white rounded-[10px] shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden cursor-pointer group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-400 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <div class="absolute top-4 left-4 bg-navy text-white text-[10px] font-montserrat font-bold uppercase tracking-wider px-3 py-1.5 rounded-[4px] shadow-sm">Đầu Tư Úc</div>
+                    </div>
+                    <div class="p-6 border-t border-gold border-opacity-30">
+                        <h4 class="font-montserrat font-bold text-navy text-lg mb-2 group-hover:text-gold transition-colors">Quỹ Đầu Tư Doanh Nghiệp (MINT)</h4>
+                        <p class="text-sm text-caption mb-4">Cơ hội đầu tư an toàn được chính phủ bảo trợ, thiết lập lộ trình lên thường trú nhân Úc nhanh chóng.</p>
+                        <span class="text-xs font-bold text-gold uppercase tracking-[1px]">Đang mở gọi vốn &rarr;</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-navy text-navy font-montserrat font-semibold text-sm uppercase tracking-[2px] px-8 py-3.5 rounded-[12px] hover:bg-navy hover:text-white transition-all duration-300">Xem Tất Cả Dự Án</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="tai-sao" class="py-20 bg-white">
+        <div class="max-w-container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <h2 class="font-montserrat font-bold text-navy text-2xl md:text-3xl uppercase tracking-[2px]">Tại Sao Các Nhà Đầu Tư Tin Chọn Interimm?</h2>
+                    <div class="w-[60px] h-[3px] bg-gold mt-4 mb-8"></div>
+                    <p class="text-body mb-8">Interimm là công ty định cư Mỹ và tư vấn di trú quốc tế với hơn 10 năm kinh nghiệm di trú. Sự tín nhiệm của các nhà đầu tư được xây dựng vững chắc nhờ đội ngũ chuyên gia am hiểu sâu sắc, trực tiếp thiết kế các chiến lược di trú cá nhân hóa, minh bạch và hiệu quả vượt trội.</p>
                     
-                    <!-- Quick Stats -->
-                    <div class="mt-12 grid grid-cols-3 gap-4 border-t border-slate-700 pt-8">
-                        <div>
-                            <div class="text-2xl font-bold text-white">1+</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-wider">Năm kinh nghiệm</div>
+                    <div class="space-y-8">
+                        <!-- Item 1 -->
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-navy text-lg mb-2">Bề Dày Kinh Nghiệm</h4>
+                                <p class="text-sm text-caption">Interimm sở hữu hơn 10 năm kinh nghiệm thực chiến cùng sự am hiểu sâu sắc về pháp lý và quy trình quốc tịch Mỹ. Chúng tôi trực tiếp thẩm định khắt khe từng dự án, hỗ trợ hơn 1.000 gia đình Việt định cư thành công với tỷ lệ chấp thuận tuyệt đối 100%.</p>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-2xl font-bold text-white">Top 10</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-wider">Hàng loạt Keyword</div>
+                        <!-- Item 2 -->
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-navy text-lg mb-2">Mạng Lưới Đối Tác</h4>
+                                <p class="text-sm text-caption">Interimm thiết lập mạng lưới hợp tác hơn 10 năm cùng các tập đoàn bất động sản, nhà phát triển dự án và hãng luật uy tín. Sự kết nối chiến lược này đảm bảo nguồn dự án chất lượng, bảo vệ tối đa quyền lợi pháp lý.</p>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-2xl font-bold text-white">GPA 8.8</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-wider">Cao đẳng FPT</div>
+                        <!-- Item 3 -->
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-navy text-lg mb-2">Dịch Vụ Toàn Diện</h4>
+                                <p class="text-sm text-caption">Cung cấp quy trình 6 bước chuyên sâu: từ tư vấn ban đầu, chuẩn bị hồ sơ chứng minh tài chính, nộp đơn, theo dõi xét duyệt, huấn luyện phỏng vấn đến hỗ trợ an cư. Mỗi gia đình sẽ được đồng hành bởi một chuyên viên phụ trách xuyên suốt.</p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-navy text-lg mb-2">Minh Bạch Tài Chính</h4>
+                                <p class="text-sm text-caption">Interimm luôn cập nhật báo cáo tiến độ dự án định kỳ đến khách hàng. Chúng tôi cam kết hoàn lại 100% phí dịch vụ nếu hồ sơ không được phê duyệt.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Image/Avatar -->
-                <div class="flex-1 relative fade-in-up delay-200">
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-                        <!-- CẬP NHẬT: Gradient nền ảnh sang xanh dương/tím -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-cyan-400 rounded-full blur opacity-75"></div>
-                        
-                        <!-- CẬP NHẬT: Link ảnh mới -->
-                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfpbNvq0qP2wOXc_SCs5BKSYtF1jh8vq-yRGRb-iFYACCGAJag-K6pLaYdWUKPcYbK0e_WNdVu22H5c6rvum1U3s8Kx1vu4BU-M9RFLNhtjbICFg_qyIlIIjOFYBuXqJHW_OGX8As7RoAez41LF3tmp8R3zEVw?key=JeVlgVoxJSwkKOYKBBbL5g" 
-                             alt="Trần Bình Long" 
-                             class="relative w-full h-full object-cover rounded-full border-4 border-slate-800 shadow-2xl" 
-                             onerror="this.src='https://ui-avatars.com/api/?name=Long+Tran&background=3b82f6&color=fff&size=300'">
-                        
-                        <!-- Floating Tech Badges -->
-                        <div class="absolute -top-4 -right-4 bg-card p-3 rounded-lg shadow-xl border border-slate-700 animate-bounce" style="animation-duration: 3s;">
-                            <i class="fab fa-google text-2xl text-white"></i>
+                <div class="relative">
+                    <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXflIlh8c_eaDTp-5LDj-5k9CJjt86ZgFXicwBjPj4CbVy0ez_n0bqGYXUAkiFUoBMj5AkkIzCys1moHuyxff1a_5IKI2VPW6hdxPCG220sEGsuc9ud6bIIIfQznBVeGG55ZextF_srb7SeyMyh-Ks1lKKAOYS4" alt="Chuyên gia tư vấn Interimm" class="w-full rounded-[10px] shadow-card relative z-10">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-gold rounded-[10px] z-0 hidden lg:block"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Full 10 Thẻ) -->
+    <section id="cau-chuyen" class="py-20 bg-light-gray overflow-hidden">
+        <div class="max-w-container mx-auto px-4 text-center mb-12">
+            <h2 class="font-montserrat font-bold text-navy text-2xl md:text-3xl uppercase tracking-[2px]">Câu Chuyện Thành Công Từ Khách Hàng Interimm</h2>
+            <div class="w-[60px] h-[3px] bg-gold mx-auto mt-4 mb-6"></div>
+            <p class="text-body max-w-2xl mx-auto">Hàng trăm gia đình đã hiện thực hóa giấc mơ định cư quốc tế nhờ sự đồng hành chuyên nghiệp của Interimm. Sự thành công của khách hàng chính là thước đo uy tín chân thực nhất. Dưới đây là những góc nhìn và trải nghiệm thực tế từ các gia đình nhà đầu tư đã tin chọn đồng hành cùng chúng tôi.</p>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="max-w-container mx-auto px-4 relative">
+            <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
+                
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Vợ chồng tôi thực sự cảm kích các bạn chuyên viên Interimm đã đồng hành vào những lúc khó khăn nhất. Ngày mới sang Bồ Đào Nha, nhờ có công ty hỗ trợ tận tình mà gia đình tôi mới an tâm định cư và nhanh chóng hòa nhập."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình chị O. & Anh H.</h5><span class="text-xs text-caption">Khách hàng định cư Bồ Đào Nha</span></div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Lúc mới bắt đầu làm hồ sơ, vợ chồng tôi mang tâm lý rất hoang mang và lo lắng. Thật may mắn là sự nhiệt tình cùng kinh nghiệm dày dặn của đội ngũ Interimm đã giúp gia đình tôi tháo gỡ mọi vướng mắc trọn vẹn."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình chị H. & Anh N.</h5><span class="text-xs text-caption">Khách hàng định cư diện doanh nhân</span></div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Gia đình tôi xin gửi lời tri ân chân thành đến Interimm sau chặng đường 6 năm gắn bó. Việc cầm trên tay tấm thẻ xanh 10 năm và nhận lại đủ tiền hoàn vốn đúng cam kết khiến vợ chồng tôi vô cùng mãn nguyện."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình anh P. & Chị B.</h5><span class="text-xs text-caption">Khách hàng định cư Mỹ</span></div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Những ngày đầu đặt chân đến nước Mỹ, gia đình tôi không tránh khỏi sự bỡ ngỡ. Chính sự động viên thường xuyên và hỗ trợ sát sao của các bạn nhân viên đã mang lại cho tôi cảm giác ấm áp như người nhà."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình chị H.L</h5><span class="text-xs text-caption">Khách hàng định cư Mỹ</span></div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Nhờ Interimm lo liệu chu toàn, cả nhà tôi đã cầm chắc tấm thẻ PR Canada trong tay. Hiện tại các con tôi đã nhập học ổn định, còn công việc kinh doanh của hai vợ chồng cũng đang rất thuận lợi."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình anh T. & Chị T.</h5><span class="text-xs text-caption">Khách hàng định cư Canada</span></div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Gia đình tôi đánh giá rất cao sự tận tâm của công ty trong suốt hơn 4 năm ròng rã theo sát hồ sơ. Vợ chồng tôi đã vỡ òa hạnh phúc khi chính thức nhận được thẻ xanh Mỹ nhờ vào năng lực của các bạn."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình cô O. & Chú S.</h5><span class="text-xs text-caption">Khách hàng định cư Mỹ</span></div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Tôi thực sự bất ngờ với tốc độ làm việc chuyên nghiệp của đội ngũ Interimm. Hồ sơ định cư của gia đình tôi đã được xét duyệt thành công với thời gian nhanh hơn cả những gì vợ chồng tôi kỳ vọng."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình chị L. & Anh K.</h5><span class="text-xs text-caption">Khách hàng định cư quốc tế</span></div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Cô chú muốn gửi lời cảm ơn chân thành nhất đến tập thể nhân viên Interimm. Việc cả hai cậu con trai đều lấy được visa đi Mỹ một cách suôn sẻ chính là kết quả từ sự hỗ trợ hết mình của công ty."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình cô L. & Chú T.</h5><span class="text-xs text-caption">Khách hàng định cư Mỹ</span></div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Chú thực sự yên tâm khi giao phó tương lai của gia đình cho Interimm. Đội ngũ chuyên gia đã xử lý vô cùng êm đẹp và trọn vẹn cả hai bộ hồ sơ định cư tại Mỹ lẫn Úc cho nhà chú."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình chú L.</h5><span class="text-xs text-caption">Khách hàng định cư Mỹ & Úc</span></div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="bg-white p-8 rounded-[10px] min-w-[320px] md:min-w-[400px] snap-center shadow-card border-t-4 border-gold">
+                    <div class="text-gold mb-4"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+                    <p class="text-body text-sm italic mb-6">"Hồ sơ của nhà tôi vốn dĩ rất phức tạp và từng bị đánh giá là trường hợp khó. Thế nhưng, sự am hiểu luật pháp và cách làm việc sắc bén của Interimm đã giúp gia đình tôi gặt hái được kết quả định cư viên mãn."</p>
+                    <div><h5 class="font-montserrat font-bold text-navy text-sm">Gia đình chị B.</h5><span class="text-xs text-caption">Khách hàng định cư quốc tế</span></div>
+                </div>
+
+            </div>
+            <!-- Swipe instruction for mobile -->
+            <p class="text-center text-xs text-caption mt-2 md:hidden">Vuốt sang ngang để xem thêm &rarr;</p>
+        </div>
+    </section>
+
+    <!-- Đối tác chiến lược quốc tế (Bổ sung theo prompt gốc) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-container mx-auto px-4 text-center">
+            <h2 class="font-montserrat font-bold text-navy text-2xl md:text-3xl uppercase tracking-[2px]">Đối Tác Chiến Lược Quốc Tế</h2>
+            <div class="w-[60px] h-[3px] bg-gold mx-auto mt-4 mb-8"></div>
+            <p class="text-body max-w-4xl mx-auto mb-12">Interimm thiết lập quan hệ hợp tác chiến lược cùng mạng lưới các nhà phát triển dự án, trung tâm vùng và hãng luật di trú uy tín trên toàn cầu. Sự kết nối chuyên sâu này chính là nền tảng vững chắc để chúng tôi bảo vệ quyền lợi pháp lý và kiến tạo những giải pháp định cư an toàn, minh bạch nhất cho gia đình Quý khách.</p>
+            
+            <!-- Placeholder for Partner Logos -->
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
+                <div class="font-playfair font-bold text-2xl text-gray-400">PARTNER LOGO</div>
+                <div class="font-playfair font-bold text-2xl text-gray-400">PARTNER LOGO</div>
+                <div class="font-playfair font-bold text-2xl text-gray-400">PARTNER LOGO</div>
+                <div class="font-playfair font-bold text-2xl text-gray-400">PARTNER LOGO</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Gen Form / Contact -->
+    <section id="lien-he" class="py-20 bg-navy relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="max-w-container mx-auto px-4 relative z-10">
+            <div class="bg-white rounded-[12px] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Info Side -->
+                <div class="bg-light-gray p-10 lg:w-5/12 border-b lg:border-b-0 lg:border-r border-gray-200 flex flex-col justify-center">
+                    <h2 class="font-montserrat font-bold text-navy text-2xl mb-4">Bắt đầu hành trình định cư cùng Interimm</h2>
+                    <p class="text-sm text-body mb-8">Lựa chọn đúng đơn vị tư vấn là bước đầu tiên quyết định sự thành công của mọi bộ hồ sơ định cư. Interimm tự hào mang đến những giải pháp di trú minh bạch và an toàn tuyệt đối cho tương lai của gia đình bạn. Hãy điền thông tin để được đội ngũ chuyên gia thẩm định hồ sơ chi tiết.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-caption">Hotline</p>
+                                <p class="font-montserrat font-bold text-navy">0901 328 328</p>
+                            </div>
                         </div>
-                        <div class="absolute bottom-4 -left-4 bg-card p-3 rounded-lg shadow-xl border border-slate-700 animate-bounce" style="animation-duration: 4s;">
-                            <i class="fas fa-project-diagram text-2xl text-primary"></i>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-caption">Email</p>
+                                <p class="font-montserrat font-bold text-navy">info@interimm.vn</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="p-10 lg:w-7/12">
+                    <h3 class="font-montserrat font-bold text-navy text-xl mb-6">Nhận Thẩm Định Hồ Sơ Miễn Phí</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-caption font-semibold mb-1">Họ và Tên *</label>
+                                <input type="text" class="w-full border border-gray-300 rounded-[4px] px-4 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy transition-colors text-sm" placeholder="Nhập họ và tên">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-caption font-semibold mb-1">Số điện thoại *</label>
+                                <input type="tel" class="w-full border border-gray-300 rounded-[4px] px-4 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy transition-colors text-sm" placeholder="Nhập số điện thoại">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-caption font-semibold mb-1">Email</label>
+                            <input type="email" class="w-full border border-gray-300 rounded-[4px] px-4 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy transition-colors text-sm" placeholder="Nhập email của bạn">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-caption font-semibold mb-1">Chương trình quan tâm *</label>
+                            <select class="w-full border border-gray-300 rounded-[4px] px-4 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy transition-colors text-sm bg-white">
+                                <option>Định cư Mỹ (EB-5, L1)</option>
+                                <option>Định cư Châu Âu</option>
+                                <option>Định cư Úc</option>
+                                <option>Định cư Canada</option>
+                                <option>Định cư New Zealand</option>
+                                <option>Chưa xác định - Cần tư vấn</option>
+                            </select>
+                        </div>
+                        <div class="pt-2">
+                            <button type="button" class="w-full bg-gold text-navy font-montserrat font-bold text-sm uppercase tracking-[2px] py-3.5 rounded-[12px] hover:bg-gold-bright transition-colors duration-300 shadow-md">
+                                Gửi Yêu Cầu Tư Vấn
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills & Charts Section -->
-    <section id="skills" class="py-20 bg-card/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-3xl font-bold text-white mb-2">Bộ Kỹ Năng & Tư Duy</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+    <!-- Báo chí nói gì về Interimm? (Bổ sung theo prompt gốc) -->
+    <section class="py-20 bg-light-gray">
+        <div class="max-w-container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-montserrat font-bold text-navy text-2xl md:text-3xl uppercase tracking-[2px]">Báo Chí Nói Gì Về Interimm?</h2>
+                <div class="w-[60px] h-[3px] bg-gold mx-auto mt-4 mb-6"></div>
+                <p class="text-body">Interimm thường xuyên xuất hiện trên các phương tiện truyền thông và báo chí uy tín tại Việt Nam với tư cách chuyên gia di trú. Chúng tôi mang đến góc nhìn chuyên sâu về thị trường đầu tư định cư, cập nhật thay đổi pháp lý và phân tích các dự án EB-5 đã triển khai thành công.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <!-- Radar Chart -->
-                <div class="bg-dark p-6 rounded-2xl border border-slate-700 shadow-lg fade-in-up">
-                    <canvas id="skillsChart"></canvas>
-                </div>
-
-                <!-- Skill Details -->
-                <div class="space-y-6 fade-in-up">
-                    <!-- Tech SEO -->
-                    <div class="group">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-semibold text-white group-hover:text-primary transition-colors">Technical SEO & Schema</span>
-                            <span class="text-primary font-mono">85%</span>
-                        </div>
-                        <div class="w-full bg-slate-700 rounded-full h-2.5">
-                            <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                        <p class="text-sm text-slate-500 mt-1">Cấu trúc Silo, Schema Markup (JSON-LD), PageSpeed Optimization.</p>
-                    </div>
-
-                    <!-- Semantic/Content -->
-                    <div class="group">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-semibold text-white group-hover:text-primary transition-colors">Semantic Content & NLP</span>
-                            <span class="text-primary font-mono">90%</span>
-                        </div>
-                        <div class="w-full bg-slate-700 rounded-full h-2.5">
-                            <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
-                        </div>
-                        <p class="text-sm text-slate-500 mt-1">Entity Building, Topic Cluster, Hemingway Rules, KGR.</p>
-                    </div>
-
-                    <!-- Tools -->
-                    <div class="group">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-semibold text-white group-hover:text-primary transition-colors">SEO Tools & Analytics</span>
-                            <span class="text-primary font-mono">80%</span>
-                        </div>
-                        <div class="w-full bg-slate-700 rounded-full h-2.5">
-                            <div class="bg-primary h-2.5 rounded-full" style="width: 80%"></div>
-                        </div>
-                        <p class="text-sm text-slate-500 mt-1">Ahrefs, GSC, GA4, Screaming Frog.</p>
-                    </div>
-
-                    <!-- Soft Skills -->
-                    <div class="mt-8 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">Tự học (Self-Learning)</span>
-                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">Làm việc độc lập</span>
-                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">Tư duy phản biện</span>
-                        <span class="px-3 py-1 bg-slate-700 text-sm rounded-full border border-slate-600">AI Prompting</span>
-                    </div>
-                </div>
+            <!-- News Links Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://vnexpress.net/nhung-luu-y-quan-trong-khi-dau-tu-dinh-cu-my-eb-5-3895164.html" target="_blank" class="block bg-white p-5 rounded-[8px] shadow-sm hover:shadow-card transition-shadow border-l-4 border-gold">
+                    <span class="text-[10px] text-caption font-bold uppercase tracking-wider mb-2 block">VNExpress</span>
+                    <span class="text-sm font-montserrat text-navy font-semibold line-clamp-2">Những lưu ý quan trọng khi đầu tư định cư Mỹ EB-5</span>
+                </a>
+                <a href="https://vnexpress.net/giai-phap-dinh-cu-gia-dinh-cho-du-hoc-sinh-my-4887296.html" target="_blank" class="block bg-white p-5 rounded-[8px] shadow-sm hover:shadow-card transition-shadow border-l-4 border-gold">
+                    <span class="text-[10px] text-caption font-bold uppercase tracking-wider mb-2 block">VNExpress</span>
+                    <span class="text-sm font-montserrat text-navy font-semibold line-clamp-2">Giải pháp định cư gia đình cho du học sinh Mỹ</span>
+                </a>
+                <a href="https://cafef.vn/lua-chon-du-an-eb-5-yeu-to-vang-dam-bao-hoan-von-dau-tu-188250318075459441.chn" target="_blank" class="block bg-white p-5 rounded-[8px] shadow-sm hover:shadow-card transition-shadow border-l-4 border-gold">
+                    <span class="text-[10px] text-caption font-bold uppercase tracking-wider mb-2 block">CafeF</span>
+                    <span class="text-sm font-montserrat text-navy font-semibold line-clamp-2">Lựa chọn dự án EB-5: Yếu tố vàng đảm bảo hoàn vốn đầu tư</span>
+                </a>
+                <a href="https://cafebiz.vn/interimm-hanh-trinh-dong-hanh-xuyen-suot-cung-nha-dau-tu-viet-dinh-cu-my-176240416094115095.chn" target="_blank" class="block bg-white p-5 rounded-[8px] shadow-sm hover:shadow-card transition-shadow border-l-4 border-gold">
+                    <span class="text-[10px] text-caption font-bold uppercase tracking-wider mb-2 block">CafeBiz</span>
+                    <span class="text-sm font-montserrat text-navy font-semibold line-clamp-2">Hành trình đồng hành xuyên suốt cùng nhà đầu tư Việt định cư Mỹ</span>
+                </a>
+                <a href="https://www.24h.com.vn/kinh-doanh/eb-5-mo-ra-canh-cua-dai-han-de-hoc-tap-lam-viec-va-dinh-cu-my-c161a1668225.html" target="_blank" class="block bg-white p-5 rounded-[8px] shadow-sm hover:shadow-card transition-shadow border-l-4 border-gold">
+                    <span class="text-[10px] text-caption font-bold uppercase tracking-wider mb-2 block">24h.com.vn</span>
+                    <span class="text-sm font-montserrat text-navy font-semibold line-clamp-2">EB-5 mở ra cánh cửa dài hạn để học tập, làm việc và định cư Mỹ</span>
+                </a>
+                <a href="https://dantri.com.vn/kinh-doanh/chuong-trinh-dinh-cu-my-eb-5-chinh-thuc-ap-dung-luat-moi-20190726110634100.htm" target="_blank" class="block bg-white p-5 rounded-[8px] shadow-sm hover:shadow-card transition-shadow border-l-4 border-gold">
+                    <span class="text-[10px] text-caption font-bold uppercase tracking-wider mb-2 block">Dân Trí</span>
+                    <span class="text-sm font-montserrat text-navy font-semibold line-clamp-2">Chương trình định cư Mỹ EB-5 chính thức áp dụng luật mới</span>
+                </a>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center gap-2 text-navy font-montserrat font-bold text-sm hover:text-gold transition-colors">Xem toàn bộ bài báo <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="py-20 bg-dark relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-3xl font-bold text-white mb-2">Hành Trình Sự Nghiệp</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-            </div>
-
-            <div class="relative border-l-2 border-slate-700 ml-4 md:ml-0 md:pl-0 space-y-12">
-                <!-- Timeline Item 1 -->
-                <div class="relative fade-in-up">
-                    <!-- Dot -->
-                    <div class="absolute -left-[21px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-dark"></div>
-                    
-                    <div class="md:flex md:justify-between md:gap-8 group">
-                        <!-- Date (Left on Desktop) -->
-                        <div class="md:w-1/2 md:text-right mb-2 md:mb-0">
-                            <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-mono rounded border border-primary/20">
-                                10/2024 - Hiện tại
-                            </span>
-                        </div>
-                        <!-- Content (Right on Desktop) -->
-                        <div class="md:w-1/2 pl-6 md:pl-0">
-                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                                Thực Tập Sinh SEO (Part-time)
-                            </h3>
-                            <h4 class="text-slate-400 mb-2">TruongPhatCo.com.vn</h4>
-                            <ul class="list-disc list-outside ml-4 text-slate-400 space-y-2 text-sm">
-                                <li>Thiết kế và tối ưu giao diện website hướng tới trải nghiệm người dùng (UX).</li>
-                                <li>Lên kế hoạch <strong>SEO tổng thể</strong>, xây dựng Topical Map.</li>
-                                <li>Triển khai cấu trúc <strong>Silo vật lý</strong> cho URL để tối ưu dòng chảy sức mạnh (Link Juice).</li>
-                                <li>Viết bài chuẩn SEO áp dụng quy tắc Hemingway, đảm bảo tính dễ đọc và chuẩn NLP.</li>
-                                <li><strong>Kết quả:</strong> Đẩy 10+ từ khóa khó vào Top 10 Google.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="relative fade-in-up">
-                    <div class="absolute -left-[21px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-slate-600 ring-4 ring-dark group-hover:bg-primary transition-colors"></div>
-                    
-                    <div class="md:flex md:justify-between md:gap-8 flex-row-reverse group">
-                        <!-- Date (Right on Desktop due to reverse) -->
-                        <div class="md:w-1/2 mb-2 md:mb-0"> <!-- Changed text alignment logic via flex-row-reverse -->
-                             <span class="inline-block px-3 py-1 bg-slate-800 text-slate-400 text-sm font-mono rounded border border-slate-700">
-                                05/2024 - 08/2024
-                            </span>
-                        </div>
-                        <!-- Content -->
-                        <div class="md:w-1/2 pl-6 md:pl-0 md:text-right">
-                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                                Chuyên Viên SEO
-                            </h3>
-                            <h4 class="text-slate-400 mb-2">NiceCoco.net</h4>
-                            <ul class="list-disc list-outside ml-4 md:ml-0 md:mr-4 md:list-none text-slate-400 space-y-2 text-sm">
-                                <li>Nghiên cứu từ khóa theo phương pháp <strong>KGR (Keyword Golden Ratio)</strong> để đánh chiếm thị ngách.</li>
-                                <li>Xây dựng chiến lược Internal Link theo mô hình cụm chủ đề (Topic Cluster).</li>
-                                <li>Triển khai SEO Off-page: Xây dựng hệ thống Social Entity để xác thực thương hiệu với Google.</li>
-                                <li><strong>Kết quả:</strong> 1000 Traffic/tháng, 10 từ khóa Top 10, 50+ từ khóa Top 100.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Grid -->
-    <section id="projects" class="py-20 bg-card/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-3xl font-bold text-white mb-2">Dự Án Tiêu Biểu</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover:border-primary transition-all hover:-translate-y-2 duration-300 fade-in-up group">
-                    <div class="h-40 bg-slate-800 flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-shopping-bag text-5xl text-slate-600 group-hover:text-primary transition-colors z-10"></i>
-                        <div class="absolute inset-0 bg-grid opacity-20"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">NiceCoco.net</h3>
-                        <p class="text-slate-400 text-sm mb-4">Website thương mại điện tử mảng thời trang/phụ kiện.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Entity Setup</span>
-                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">KGR</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-4 border-t border-slate-700">
-                            <span class="text-emerald-400 font-mono text-sm"><i class="fas fa-chart-line mr-1"></i> +1000 Traffic</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover:border-primary transition-all hover:-translate-y-2 duration-300 fade-in-up delay-100 group">
-                    <div class="h-40 bg-slate-800 flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-building text-5xl text-slate-600 group-hover:text-primary transition-colors z-10"></i>
-                         <div class="absolute inset-0 bg-grid opacity-20"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">TruongPhatCo</h3>
-                        <p class="text-slate-400 text-sm mb-4">Website doanh nghiệp, tối ưu cấu trúc kỹ thuật.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Silo Structure</span>
-                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">UX/UI</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-4 border-t border-slate-700">
-                            <span class="text-emerald-400 font-mono text-sm"><i class="fas fa-check-circle mr-1"></i> Top 10 key khó</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 (Placeholder for future) -->
-                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 border-dashed hover:border-primary transition-all fade-in-up delay-200 flex flex-col items-center justify-center p-6 text-center h-full min-h-[300px]">
-                    <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-4">
-                        <i class="fas fa-plus text-2xl text-slate-500"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Personal Blog</h3>
-                    <p class="text-slate-400 text-sm">Đang phát triển website cá nhân chia sẻ về Semantic SEO & Finance.</p>
-                </div>
-            </div>
+    <!-- Tin tức & Sự kiện (Bổ sung theo prompt gốc) -->
+    <section id="tin-tuc" class="py-20 bg-white border-b border-gray-100">
+        <div class="max-w-container mx-auto px-4 text-center">
+            <h2 class="font-montserrat font-bold text-navy text-2xl md:text-3xl uppercase tracking-[2px]">Tin Tức & Sự Kiện</h2>
+            <div class="w-[60px] h-[3px] bg-gold mx-auto mt-4 mb-6"></div>
+            <p class="text-body max-w-3xl mx-auto mb-12">Thị trường di trú toàn cầu luôn biến động liên tục về pháp lý. Interimm thường xuyên chia sẻ kiến thức chuyên sâu, tin tức cập nhật mới nhất và các sự kiện nổi bật để nhà đầu tư chủ động nắm bắt cơ hội.</p>
+            <a href="#" class="inline-block border-2 border-navy text-navy font-montserrat font-semibold text-sm uppercase tracking-[2px] px-8 py-3.5 rounded-[12px] hover:bg-navy hover:text-white transition-all duration-300">Khám Phá Chuyên Trang Tin Tức</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-dark border-t border-slate-800 py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl font-bold text-white mb-8">Let's Connect</h2>
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="mailto:binhlongsd@gmail.com" class="text-slate-400 hover:text-primary text-3xl transition-transform hover:scale-110">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="#" class="text-slate-400 hover:text-primary text-3xl transition-transform hover:scale-110">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://binhlong.xyz" class="text-slate-400 hover:text-primary text-3xl transition-transform hover:scale-110">
-                    <i class="fas fa-globe"></i>
-                </a>
+    <footer class="bg-navy-dark pt-16 pb-8 border-t-4 border-gold">
+        <div class="max-w-container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <a href="#" class="font-playfair font-bold text-3xl text-white tracking-tight block mb-4">
+                        INTERIMM<span class="text-gold">.</span>
+                    </a>
+                    <p class="text-white/70 text-sm mb-6">Chuyên gia tư vấn đầu tư định cư quốc tế hàng đầu, mang đến giải pháp di trú toàn diện và an toàn cho các gia đình Việt.</p>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-white mb-4 uppercase tracking-[1px] text-sm">Chương Trình Định Cư</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li><a href="#" class="hover:text-gold transition-colors">Đầu tư định cư Mỹ</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Đầu tư định cư Châu Âu</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Đầu tư định cư Úc</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Đầu tư định cư Canada</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Đầu tư định cư New Zealand</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Đầu tư định cư Caribbean</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-white mb-4 uppercase tracking-[1px] text-sm">Liên Hệ</h4>
+                    <ul class="space-y-3 text-sm text-white/70">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Tòa nhà Interimm, Quận 1, TP. Hồ Chí Minh</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>0901 328 328</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span>info@interimm.vn</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-slate-600 text-sm font-mono">
-                © 2024 Trần Bình Long. Designed by AI, Architected by Human.
-            </p>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-white/50">&copy; 2026 Interimm. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-white/50 hover:text-white transition-colors text-xs">Chính sách bảo mật</a>
+                    <a href="#" class="text-white/50 hover:text-white transition-colors text-xs">Điều khoản sử dụng</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        // 1. Chart.js Configuration
-        const ctx = document.getElementById('skillsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: ['Technical SEO', 'Content/NLP', 'On-page', 'Off-page/Entity', 'Data Analysis', 'Web Design'],
-                datasets: [{
-                    label: 'Skill Level',
-                    data: [85, 90, 95, 75, 80, 70],
-                    // CẬP NHẬT: Màu biểu đồ khớp với theme xanh dương
-                    backgroundColor: 'rgba(59, 130, 246, 0.2)', 
-                    borderColor: '#3b82f6',
-                    pointBackgroundColor: '#fff',
-                    pointBorderColor: '#3b82f6',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                scales: {
-                    r: {
-                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                        pointLabels: { color: '#94a3b8', font: { size: 12 } },
-                        ticks: { display: false, backdropColor: 'transparent' }
-                    }
-                },
-                plugins: {
-                    legend: { display: false }
-                },
-                maintainAspectRatio: false
-            }
-        });
-
-        // 2. Typing Effect
-        const textElement = document.getElementById('typing-text');
-        const phrases = ['Semantic SEO Specialist', 'Vibe Coder', 'Growth Mindset Learner'];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-            
-            if (isDeleting) {
-                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                isDeleting = true;
-                setTimeout(type, 2000); // Pause at end
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(type, 500); // Pause before new word
-            } else {
-                setTimeout(type, isDeleting ? 50 : 100);
-            }
-        }
-        document.addEventListener('DOMContentLoaded', type);
-
-        // 3. Scroll Animation (Intersection Observer)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Only animate once
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach((el) => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
